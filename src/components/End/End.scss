@@ -1,0 +1,30 @@
+.end{
+
+}
+
+.block_with_info{
+    flex-direction: column;
+    max-width: 800px;
+    border-radius: 40px;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid white;
+
+}
+.end_text{
+    color: white;
+}
+
+
+.right{
+    background-color: rgb(0, 112, 0);
+}
+.wrong{
+    background-color: rgb(167, 0, 0);
+}
+
+
+.block_wrap{
+    // position: absolute;
+    
+}
