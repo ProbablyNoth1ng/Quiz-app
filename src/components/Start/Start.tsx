@@ -3,6 +3,7 @@ import './Start.scss'
 import {Props} from '../../types'
 import { useAppDispatch } from "../hooks";
 import { NextPage } from "../../Store/currentPageSlice";
+import Button from '@mui/material/Button';
 
 const Start : React.FC<Props> = (props) => {
     const dispatch = useAppDispatch();
@@ -10,8 +11,8 @@ const Start : React.FC<Props> = (props) => {
     return (
         <>
         <div className={`start ${props.className === 'hidden' ? 'hidden' : 'show'}`}>
-            <p className="text-7xl uppercase text-white title flex justify-center  ">do u brave enough? Take a quiz</p>
-            <button className="btn text-white beg_start mt-20 mx-auto flex justify-center text-3xl" onClick={() => dispatch(NextPage())}>Start</button>
+            <p className="text-6xl uppercase text-white title flex justify-center  passion ">do u brave enough? Take a quiz</p> 
+            <Button variant="contained" onClick={() => dispatch(NextPage())} className="beg_start" >Start</Button>
         </div>
         </>
     )

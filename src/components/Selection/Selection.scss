@@ -4,11 +4,14 @@
    
 }
 .select_container{
-    padding-top: 50vh;
+    // padding-top: 50vh;
     // top: 50%;
     // transform: translate(-50%, -50%);
     // left: 50%;
     // position: absolute;
+    .base-MenuButton-root{
+        margin: 0 30px ;
+    }
 }
 .start_btn{
     color: whitesmoke;
@@ -21,4 +24,11 @@
     overflow-y: auto !important;
     max-height: 40vh !important;
     scrollbar-width: thin !important; 
+}
+
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }

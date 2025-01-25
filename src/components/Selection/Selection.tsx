@@ -9,6 +9,8 @@ import { useAppSelector,useAppDispatch } from "../hooks";
 import { setQuestions } from "../../Store/questionsSlice";
 import { NextPage } from "../../Store/currentPageSlice";
 import {Props} from '../../types'
+import Button from '@mui/material/Button';
+
 
 type Category = {
     "id":number,
@@ -86,8 +88,8 @@ const Selection : React.FC<Props> = (props) => {
 
                  console.log(categories)
                  console.log(key)
-                 console.log(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}`)
-                 response = await fetch(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}`)
+                 console.log(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}&encode=base64`)
+                 response = await fetch(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}&encode=base64`)
                  
         
                  const data = await response.json();
@@ -116,38 +118,41 @@ const Selection : React.FC<Props> = (props) => {
         <>
         <div className={`selection ${props.className === "hidden" ? "hidden" : "show"}`}>
                     {/* <div className={`${isDarkMode ? 'dark' : ''}`}> */}
-                    <div className="select_container flex justify-evenly container mx-auto">
-                        <Dropdown>
-                            <MenuButton>{category.length === 0 ? "Select Category" : category}</MenuButton>
-                            <Menu className="scroll">
-                              {categories.map((category) =>(
-                                <MenuItem className="category text-white text-2xl font-medium " key={category.id} onClick={createHandleMenuClick(category.name,'Category')}>{category.name}</MenuItem>
-                              ))}
-                            </Menu>
-                        </Dropdown>
-                        <Dropdown>
-                            <MenuButton>{difficulty.length === 0 ? "Select Difficulty" : difficulty}</MenuButton>
-                            <Menu>
-                            <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Easy','Difficulty')}>Easy</MenuItem>
-                            <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Medium','Difficulty')}>
-                                Medium
-                            </MenuItem>
-                            <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Hard','Difficulty')}>Hard</MenuItem>
-                            </Menu>
-                        </Dropdown>
-                        <Dropdown>
-                            <MenuButton>{type.length === 0 ? "Select Type" : type}</MenuButton>
-                            <Menu>
-                            <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Multiple Choice','Type')}>Multiple Choice </MenuItem>
-                            <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('True / False','Type')}>
-                            True / False
-                            </MenuItem>
-                            </Menu>
-                        </Dropdown>
-                        
+                    <div className="wrap   mx-auto">
+                      <div className="select_container flex justify-evenly  mx-auto">
+                          <Dropdown >
+                              <MenuButton>{category.length === 0 ? "Select Category" : category}</MenuButton>
+                              <Menu className="scroll">
+                                {categories.map((category) =>(
+                                  <MenuItem className="category text-white text-2xl font-medium " key={category.id} onClick={createHandleMenuClick(category.name,'Category')}>{category.name}</MenuItem>
+                                ))}
+                              </Menu>
+                          </Dropdown>
+                          <Dropdown>
+                              <MenuButton>{difficulty.length === 0 ? "Select Difficulty" : difficulty}</MenuButton>
+                              <Menu>
+                              <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Easy','Difficulty')}>Easy</MenuItem>
+                              <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Medium','Difficulty')}>
+                                  Medium
+                              </MenuItem>
+                              <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Hard','Difficulty')}>Hard</MenuItem>
+                              </Menu>
+                          </Dropdown>
+                          <Dropdown>
+                              <MenuButton>{type.length === 0 ? "Select Type" : type}</MenuButton>
+                              <Menu>
+                              <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('Multiple Choice','Type')}>Multiple Choice </MenuItem>
+                              <MenuItem className="text-2xl font-medium" onClick={createHandleMenuClick('True / False','Type')}>
+                              True / False
+                              </MenuItem>
+                              </Menu>
+                          </Dropdown>
+                          
+                      </div>
+                     
+                      <Button variant="contained" color="success" onClick={handleStart} className="beg_start" >Start</Button>       
                     </div>
-                    <button className="start_btn flex justify-center btn button text-3xl font-bold uppercase mt-20 mx-auto" onClick={handleStart}>Start</button>
-                              
+                    
                  
                 </div>
         </>

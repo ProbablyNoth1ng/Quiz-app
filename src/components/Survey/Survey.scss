@@ -8,18 +8,7 @@
     transform: translate(-50%,-50%);
 }
 
-.answer_variant{
-    padding: 20px 55px;
-    border-radius: 20px;
-}
 
-
-.answer_variant.true{
-    background-color: #11D000;
-}
-.answer_variant.false{
-    background-color: #D8282B;
-}
 .ttt{
     position: absolute;
     left: 94%;
@@ -30,6 +19,7 @@
     justify-content: center;
     margin: 0 auto !important;
     width: 30vw;
+    
     // background-color: forestgreen ;
     &::placeholder {
         color: red !important;
@@ -57,13 +47,17 @@ label[data-shrink="true"] {
   }
 
 .input_send{
-    display: flex;
-    justify-content: center;
-  
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 1.875rem !important;
     align-items: center;
-    background-color: aliceblue;
-    color: black;
+    // background-color: aliceblue;
+    margin: 40px auto 0 !important;
     border-radius: 20px;
-    padding: 10px 30px;
-    
+    padding: 5px 30px !important;
+    // margin-top: 40px !important;
+}
+.question{
+    overflow-wrap: break-word;
+    padding-bottom: 2   0px;
 }
