@@ -14,12 +14,11 @@ const End : React.FC<Props> = (props) => {
                 <p className="end_text text-center text-5xl pb-5 pt-20 uppercase">Score - {correct_answers}/10</p>
                 {questions.map((question,id) => (
                     <div className={`block_with_info mx-auto flex align-center  justify-center text-center py-5 ${answers[id] === question.correct_answer ? "right" : "wrong" }`}>
-                        {/* <div className="block_wrap"> */}
+                 
                             <p className="end_text">Question - {atob(question.question)}</p>
-                            
                             <p className="end_text">Correct answer - {atob(question.correct_answer)}</p>
                             <p className="end_text">Your answer - {answers[id]} </p>
-                        {/* </div>   */}
+                     
                         
                     </div>
                 ))}

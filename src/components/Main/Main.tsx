@@ -1,18 +1,10 @@
-import React from "react";
 import './Main.scss'
-
-
 import Start from '../Start/Start'
 import Selection from '../Selection/Selection'
 import Survey from '../Survey/Survey'
 import End from '../End/End'
 
-import { NextPage } from "../../Store/currentPageSlice";
 import { useAppSelector,useAppDispatch } from "../hooks";
-// function useIsDarkMode() {
-//     const theme = useTheme();
-//     return theme.palette.mode === 'dark';
-//   }
 
 export default function Main(){
     const currentPage = useAppSelector((state) => state.currentPage.currentPage)    

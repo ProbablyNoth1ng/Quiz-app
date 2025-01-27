@@ -3,8 +3,6 @@ import './Survey.scss'
 import { useAppSelector,useAppDispatch } from "../hooks";
 
 import TextField from '@mui/material/TextField';
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
-import { outlinedInputClasses } from '@mui/material/OutlinedInput';
 import { NextPage } from "../../Store/currentPageSlice";
 import { setAnswers } from "../../Store/questionsSlice";
 import { increaseScore } from '../../Store/scoreSlice'
@@ -15,11 +13,10 @@ import {Props} from '../../types'
 const Survey : React.FC<Props> = (props) => {
     const [currentId, setCurrentId] = useState<number>(0)
     const [textAnswer, setTextAnswer] = useState<string>("")
-    const [score, setScore] = useState<number>(0);
     const questions = useAppSelector((state) => state.questions.questions)
 
     const dispatch = useAppDispatch()
-    function nextQuestion(type){
+    function nextQuestion(type:string){
  
     
       if(type === "textArea"){
@@ -78,69 +75,3 @@ const Survey : React.FC<Props> = (props) => {
 }
 
 export default Survey
-
-const customTheme = (outerTheme) =>
-    createTheme({
-      palette: {
-        mode: outerTheme.palette.mode,
-      },
-      components: {
-        MuiTextField: {
-          styleOverrides: {
-            root: {
-              '--TextField-brandBorderColor': '#E0E3E7',
-              '--TextField-brandBorderHoverColor': '#B2BAC2',
-              '--TextField-brandBorderFocusedColor': '#6F7E8C',
-              '& label.Mui-focused': {
-                color: 'var(--TextField-brandBorderFocusedColor)',
-              },
-            },
-          },
-        },
-        MuiOutlinedInput: {
-          styleOverrides: {
-            notchedOutline: {
-              borderColor: 'var(--TextField-brandBorderColor)',
-            },
-            root: {
-              [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
-                borderColor: 'var(--TextField-brandBorderHoverColor)',
-              },
-              [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
-                borderColor: 'var(--TextField-brandBorderFocusedColor)',
-              },
-            },
-          },
-        },
-        MuiFilledInput: {
-          styleOverrides: {
-            root: {
-              '&::before, &::after': {
-                borderBottom: '2px solid var(--TextField-brandBorderColor)',
-              },
-              '&:hover:not(.Mui-disabled, .Mui-error):before': {
-                borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
-              },
-              '&.Mui-focused:after': {
-                borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
-              },
-            },
-          },
-        },
-        MuiInput: {
-          styleOverrides: {
-            root: {
-              '&::before': {
-                borderBottom: '2px solid var(--TextField-brandBorderColor)',
-              },
-              '&:hover:not(.Mui-disabled, .Mui-error):before': {
-                borderBottom: '2px solid var(--TextField-brandBorderHoverColor)',
-              },
-              '&.Mui-focused:after': {
-                borderBottom: '2px solid var(--TextField-brandBorderFocusedColor)',
-              },
-            },
-          },
-        },
-      },
-    });

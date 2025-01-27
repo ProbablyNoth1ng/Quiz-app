@@ -2,8 +2,10 @@ export interface Question {
   id: number;
   text: string;
   type: 'multiple' | 'boolean';  
-    
-  }
+  correct_answer:string;
+  question:string;
+  
+}
 
 export  interface QuestionsState {
   questions: Question[];
