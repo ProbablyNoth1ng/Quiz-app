@@ -116,6 +116,7 @@ const Selection : React.FC<Props> = (props) => {
       }
     return (
         <>
+        { !isLoading ?
         <div className={`selection ${props.className === "hidden" ? "hidden" : "show"}`}>
                     {/* <div className={`${isDarkMode ? 'dark' : ''}`}> */}
                     <div className="wrap   mx-auto">
@@ -155,7 +156,16 @@ const Selection : React.FC<Props> = (props) => {
                     
                  
                 </div>
+
+            : 
+            <>
+            
+            </>
+            
+          }
         </>
+
+
     )
 }
 

@@ -4,7 +4,7 @@ import Selection from '../Selection/Selection'
 import Survey from '../Survey/Survey'
 import End from '../End/End'
 
-import { useAppSelector,useAppDispatch } from "../hooks";
+import { useAppSelector } from "../hooks";
 
 export default function Main(){
     const currentPage = useAppSelector((state) => state.currentPage.currentPage)    

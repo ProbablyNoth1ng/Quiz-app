@@ -1,6 +1,6 @@
 import React from "react";
 import './End.scss'
-import { useAppDispatch, useAppSelector } from "../hooks";
+import { useAppSelector } from "../hooks";
 import {Props} from '../../types'
 
 const End : React.FC<Props> = (props) => {
