@@ -27,8 +27,8 @@ const Survey : React.FC<Props> = (props) => {
       } else {
         
         dispatch(setAnswers(type))
-        console.log(questions[currentId].correct_answer)
-        console.log(type)
+        // console.log(questions[currentId].correct_answer)
+        // console.log(type)
         atob(questions[currentId].correct_answer) ===  type ? dispatch(increaseScore()) : ''
    
       }

@@ -37,7 +37,7 @@ const Selection : React.FC<Props> = (props) => {
 
     const questions = useAppSelector((state) => state.questions.questions)
     const dispatch = useAppDispatch()
-    console.log(questions)
+    // console.log(questions)
     useEffect(() =>{
       async function fetchCategories() {
 
@@ -45,7 +45,7 @@ const Selection : React.FC<Props> = (props) => {
           setIsLoading(true)
           const response = await fetch("https://opentdb.com/api_category.php")
           const data = await response.json()
-          console.log(data)
+          // console.log(data)
           setCategories(data.trivia_categories)
         } catch(error){
           console.error("Error fetching categories:", error);
@@ -76,7 +76,7 @@ const Selection : React.FC<Props> = (props) => {
             setType(menuItem)
             break;
         }
-          console.log(`Clicked on ${menuItem}`);
+          // console.log(`Clicked on ${menuItem}`);
         };
       };
 
@@ -86,14 +86,14 @@ const Selection : React.FC<Props> = (props) => {
             for (const key in categories) {
               if(categories[key].name === category){
 
-                 console.log(categories)
-                 console.log(key)
-                 console.log(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}&encode=base64`)
+                //  console.log(categories)
+                //  console.log(key)
+                //  console.log(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}&encode=base64`)
                  response = await fetch(`https://opentdb.com/api.php?amount=10&category=${categories[key].id}&difficulty=${difficulty.toLowerCase() }&type=${type === "True / False" ? "boolean" : "multiple"}&encode=base64`)
                  
         
                  const data = await response.json();
-                 console.log(data.results)
+                //  console.log(data.results)
                 
                  if (data.results.length !== 0  ) {
                   dispatch(setQuestions(data.results));
