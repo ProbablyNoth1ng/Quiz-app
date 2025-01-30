@@ -20,7 +20,6 @@ const Survey : React.FC<Props> = (props) => {
  
     
       if(type === "textArea"){
-        //dispatch textAnswer
         dispatch(setAnswers(textAnswer))
         atob(questions[currentId].correct_answer) ===  textAnswer ? dispatch(increaseScore()) : ''
         setTextAnswer("")

@@ -33,12 +33,17 @@
     
    }
 }
+.css-z3neuw:hover:not(.Mui-disabled, .Mui-error)::before{
+    border-bottom:2px solid rgb(0, 155, 176) !important;
+}
+
 .css-5h82ro-MuiInputBase-root-MuiInput-root{
+    // border-bottom:2px solid rgb(0, 155, 176) !important;
     &::before{
-        border-bottom:2px solid rgb(0, 155, 176) !important
+        border-bottom:2px solid rgb(0, 155, 176) !important;
     }
     &::after{
-        border-bottom:2px solid orange !important
+        border-bottom:2px solid orange !important;
     }
 
 }
