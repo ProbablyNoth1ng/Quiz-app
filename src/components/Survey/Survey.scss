@@ -36,7 +36,9 @@
 .css-z3neuw:hover:not(.Mui-disabled, .Mui-error)::before{
     border-bottom:2px solid rgb(0, 155, 176) !important;
 }
-
+.css-z3neuw::before{
+    border-bottom:2px solid rgb(0, 155, 176) !important;
+}
 .css-5h82ro-MuiInputBase-root-MuiInput-root{
     // border-bottom:2px solid rgb(0, 155, 176) !important;
     &::before{
